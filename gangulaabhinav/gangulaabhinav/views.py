@@ -14,3 +14,11 @@ def home():
     return render_template("ListOfLinks.html",
                            title = "Abhinav Gangula",
                            links = myLinks)
+
+# There mmight be a conflict on removing /hello from url and using <name> directly. Conflict with /3d
+@app.route('/hello', defaults={'name': 'World'})
+@app.route('/hello/<name>')
+def hello(name = "World"):
+    return render_template("Body.html",
+                           title = "Hello",
+                           content = "Hello " + name)

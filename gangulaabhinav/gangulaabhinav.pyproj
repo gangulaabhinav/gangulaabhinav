@@ -36,6 +36,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="gangulaabhinav\templates\Body.html" />
     <Content Include="gangulaabhinav\templates\ListOfLinks.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
