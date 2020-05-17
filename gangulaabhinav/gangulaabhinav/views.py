@@ -26,6 +26,9 @@ def Hello(name = "World"):
 
 @app.route('/3d')
 def Box3d():
-    return render_template("Body.html",
-                           title = "Box3d",
-                           content = Get3dSnippet())
+    try:
+        return render_template("Body.html",
+                               title = "Box3d",
+                               content = Get3dSnippet())
+    except Exception as e:
+        return(str(e))  
