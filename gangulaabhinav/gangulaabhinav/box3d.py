@@ -74,5 +74,7 @@ def Get3dSnippet():
     camera.zoom = 4
     
     snippet = embed.embed_snippet(views=renderer)
+    # pythreejs error causes 3d view to snap to a new position on launch
+    # https://stackoverflow.com/questions/59586889/embed-widgets-with-pythreejs-wrong-perspective-and-camera-look-at
     display(renderer)
     return snippet
