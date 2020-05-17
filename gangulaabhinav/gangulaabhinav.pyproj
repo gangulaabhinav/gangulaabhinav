@@ -42,6 +42,7 @@
     <Content Include="gangulaabhinav\templates\Body.html" />
     <Content Include="gangulaabhinav\templates\ListOfLinks.html" />
     <Content Include="requirements.txt" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="python3_6_4\">
