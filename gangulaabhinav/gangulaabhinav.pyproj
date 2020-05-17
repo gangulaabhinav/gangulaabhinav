@@ -28,6 +28,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="gangulaabhinav\box3d.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="gangulaabhinav\views.py">
       <SubType>Code</SubType>
     </Compile>

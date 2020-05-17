@@ -6,6 +6,7 @@
     <title>{{title}}</title>
 </head>
 <body>
-    {{content}}
+    <! –– Need safe here after content below, else content is converted into string ––>
+    {{content|safe}}
 </body>
 </html>
