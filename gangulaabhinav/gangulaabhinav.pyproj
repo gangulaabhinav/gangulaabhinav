@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="gangulaabhinav - Web Deploy.pubxml" />
+    <Content Include="gangulaabhinav\static\box3d.ico" />
     <Content Include="gangulaabhinav\static\gangulaabhinav.ico" />
     <Content Include="gangulaabhinav\templates\Body.html" />
     <Content Include="gangulaabhinav\templates\ListOfLinks.html" />
