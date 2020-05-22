@@ -1,4 +1,5 @@
 from os import path
+import traceback
 
 from flask import render_template
 
@@ -30,10 +31,14 @@ def Hello(name = "World"):
 
 @app.route('/3d')
 def Box3d():
+    title = "Box3d"
     try:
         return render_template("Body.html",
-                               title = "Box3d",
+                               title = title,
                                content = Get3dSnippet(),
                                icon = path.join("static", "box3d.ico"))
     except Exception as e:
-        return(str(e))  
+        return render_template("Error.html",
+                               title = title,
+                               error = str(e),
+                               callstack = traceback.format_exc()) # Todo: Linebreaks in callstack is neglected
