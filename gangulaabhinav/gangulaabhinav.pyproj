@@ -39,6 +39,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="gangulaabhinav - Web Deploy.pubxml" />
+    <Content Include="gangulaabhinav\static\gangulaabhinav.ico" />
     <Content Include="gangulaabhinav\templates\Body.html" />
     <Content Include="gangulaabhinav\templates\ListOfLinks.html" />
     <None Include="mechanismsynthesis1 - Web Deploy.pubxml" />
@@ -58,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="gangulaabhinav\" />
+    <Folder Include="gangulaabhinav\static\" />
     <Folder Include="gangulaabhinav\templates\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
