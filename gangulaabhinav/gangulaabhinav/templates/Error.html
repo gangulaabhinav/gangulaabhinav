@@ -9,6 +9,9 @@
     <h2>Error</h2>
     {{error}}
     <h2>Callstack</h2>
-    {{callstack}}
+    <! –– The below span treats /n as linebreak. To also considet /t as tabs, use pre-wrap insted of pre-line ––>
+    <span style="white-space: pre-line">
+        {{callstack}}
+    </span>
 </body>
 </html>

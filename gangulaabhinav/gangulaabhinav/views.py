@@ -41,4 +41,19 @@ def Box3d():
         return render_template("Error.html",
                                title = title,
                                error = str(e),
-                               callstack = traceback.format_exc()) # Todo: Linebreaks in callstack is neglected
+                               callstack = traceback.format_exc())
+
+# Temperory url to check import IPython. IPython is failing for pythreejs
+@app.route('/ip')
+def ImportIPython():
+    title = "IPython"
+    try:
+        import IPython
+        return render_template("Body.html",
+                               title = title,
+                               content = "IPython imported successfuly")
+    except Exception as e:
+        return render_template("Error.html",
+                               title = title,
+                               error = str(e),
+                               callstack = traceback.format_exc())
