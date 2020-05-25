@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30028.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "gangulaabhinav", "gangulaabhinav\gangulaabhinav.pyproj", "{077B1C10-FF13-409F-9D3B-CAF882285469}"
+	ProjectSection(ProjectDependencies) = postProject
+		{151B9955-9142-4719-B7EC-8F434D323564} = {151B9955-9142-4719-B7EC-8F434D323564}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppProject", "CppProject\CppProject.vcxproj", "{151B9955-9142-4719-B7EC-8F434D323564}"
 EndProject

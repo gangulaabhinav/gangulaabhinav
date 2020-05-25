@@ -11,7 +11,7 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Web launcher</LaunchProvider>
-    <WebBrowserUrl>http://localhost/ip</WebBrowserUrl>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
     <OutputPath>.</OutputPath>
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>gangulaabhinav</Name>
@@ -27,6 +27,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CppProject\CppProject.py" />
     <Compile Include="runserver.py" />
     <Compile Include="gangulaabhinav\box3d.py">
       <SubType>Code</SubType>
@@ -35,6 +36,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="gangulaabhinav\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestSwig.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -64,6 +68,7 @@
     <Folder Include="gangulaabhinav\" />
     <Folder Include="gangulaabhinav\static\" />
     <Folder Include="gangulaabhinav\templates\" />
+    <Folder Include="CppProject\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 

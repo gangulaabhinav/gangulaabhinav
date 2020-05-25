@@ -1,4 +1,6 @@
 #include "example.h"
+#include <python.h>
+
 int fact(int n) {
     if (n < 0) {       /* This should probably return an error, but this is simpler */
         return 0;
@@ -10,4 +12,9 @@ int fact(int n) {
         /* testing for overflow would be a good idea here */
         return n * fact(n - 1);
     }
+}
+
+int A::Test()
+{
+    return 192;
 }
