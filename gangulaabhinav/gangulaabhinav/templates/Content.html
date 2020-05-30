@@ -7,10 +7,7 @@
     <link rel="shortcut icon" href={{icon}}>
 </head>
 <body>
-    <h1>{{heading}}</h1>
-    {% for link in links %}
-        <a href={{link[1]}} target="_blank">{{link[0]}}</a>
-        <br>
-    {% endfor %}
+    <! –– Need safe here after content below, else content is converted into string ––>
+    {{content|safe}}
 </body>
 </html>

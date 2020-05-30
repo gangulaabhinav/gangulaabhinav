@@ -7,7 +7,10 @@
     <link rel="shortcut icon" href={{icon}}>
 </head>
 <body>
-    <! –– Need safe here after content below, else content is converted into string ––>
-    {{content|safe}}
+    <h1>{{heading}}</h1>
+    <! –– The below style treats /n as linebreak.
+        To also consider /t as tabs, use pre-wrap insted of pre-line.
+        Do not move content to a new line as these line breaks will also be considered in the output. ––>
+    <span style="white-space: pre-line">{{content}}</span>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from os import path
+import sys
 import traceback
 
 from flask import render_template
@@ -17,6 +18,7 @@ def Home():
                ["IMDb",     "https://www.imdb.com/user/ur50420048"]]
     return render_template("ListOfLinks.html",
                            title = "Abhinav Gangula",
+                           heading = "Welcome",
                            links = myLinks,
                            icon = path.join("static", "gangulaabhinav.ico"))
 
@@ -33,14 +35,13 @@ def Hello(name = "World"):
 def Box3d():
     title = "Box3d"
     try:
-        return render_template("Body.html",
-                               title = title,
+        return render_template("Content.html",
                                content = Get3dSnippet(),
                                icon = path.join("static", "box3d.ico"))
     except Exception as e:
         return render_template("Error.html",
                                title = title,
-                               error = str(e),
+                               error = str(e) + "\n" + "System encoding = " + sys.stdout.encoding,
                                callstack = traceback.format_exc())
 
 # Temperory url to check import IPython. IPython is failing for pythreejs
@@ -51,9 +52,12 @@ def ImportIPython():
         import IPython
         return render_template("Body.html",
                                title = title,
-                               content = "IPython imported successfuly")
+                               heading = "Improting IPython",
+                               content = "IPython imported successfuly" + "\n"
+                               + "System encoding = " + sys.stdout.encoding)
     except Exception as e:
         return render_template("Error.html",
                                title = title,
-                               error = str(e),
+                               error = str(e) + "\n"
+                               + "System encoding = " + sys.stdout.encoding,
                                callstack = traceback.format_exc())

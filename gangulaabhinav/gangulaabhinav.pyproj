@@ -47,6 +47,7 @@
     <Content Include="gangulaabhinav\static\box3d.ico" />
     <Content Include="gangulaabhinav\static\gangulaabhinav.ico" />
     <Content Include="gangulaabhinav\templates\Body.html" />
+    <Content Include="gangulaabhinav\templates\Content.html" />
     <Content Include="gangulaabhinav\templates\Error.html" />
     <Content Include="gangulaabhinav\templates\ListOfLinks.html" />
     <None Include="mechanismsynthesis1 - Web Deploy.pubxml" />
