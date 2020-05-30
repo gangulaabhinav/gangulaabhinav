@@ -39,25 +39,25 @@ def Box3d():
                                content = Get3dSnippet(),
                                icon = path.join("static", "box3d.ico"))
     except Exception as e:
+        encodingStr = "System encoding = " + str(sys.stdout.encoding or 'NONE')
         return render_template("Error.html",
                                title = title,
-                               error = str(e) + "\n" + "System encoding = " + sys.stdout.encoding,
+                               error = str(e) + "\n" + encodingStr,
                                callstack = traceback.format_exc())
 
 # Temperory url to check import IPython. IPython is failing for pythreejs
 @app.route('/ip')
 def ImportIPython():
     title = "IPython"
+    encodingStr = "System encoding = " + str(sys.stdout.encoding or 'NONE')
     try:
         import IPython
         return render_template("Body.html",
                                title = title,
                                heading = "Improting IPython",
-                               content = "IPython imported successfuly" + "\n"
-                               + "System encoding = " + sys.stdout.encoding)
+                               content = "IPython imported successfuly" + "\n" + encodingStr)
     except Exception as e:
         return render_template("Error.html",
                                title = title,
-                               error = str(e) + "\n"
-                               + "System encoding = " + sys.stdout.encoding,
+                               error = str(e) + "\n" + encodingStr,
                                callstack = traceback.format_exc())
