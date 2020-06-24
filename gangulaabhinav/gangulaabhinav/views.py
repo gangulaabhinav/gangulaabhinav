@@ -1,5 +1,5 @@
-from os import path
-import sys
+import os, sys
+from importlib import reload
 import traceback
 
 from flask import render_template
@@ -20,7 +20,7 @@ def Home():
                            title = "Abhinav Gangula",
                            heading = "Welcome",
                            links = myLinks,
-                           icon = path.join("static", "gangulaabhinav.ico"))
+                           icon = os.path.join("static", "gangulaabhinav.ico"))
 
 # There might be a conflict on removing /hello from url and using <name> directly. Conflict with /3d
 @app.route('/hello', defaults={'name': 'World'})
@@ -29,7 +29,7 @@ def Hello(name = "World"):
     return render_template("Body.html",
                            title = "Hello",
                            content = "Hello " + name,
-                           icon = path.join("static", "gangulaabhinav.ico")) # favico not working here. hello is being added to favicon path
+                           icon = os.path.join("static", "gangulaabhinav.ico")) # favico not working here. hello is being added to favicon path
 
 @app.route('/3d')
 def Box3d():
@@ -37,7 +37,7 @@ def Box3d():
     try:
         return render_template("Content.html",
                                content = Get3dSnippet(),
-                               icon = path.join("static", "box3d.ico"))
+                               icon = os.path.join("static", "box3d.ico"))
     except Exception as e:
         encodingStr = "System encoding = " + str(sys.stdout.encoding or 'NONE')
         return render_template("Error.html",
@@ -49,7 +49,19 @@ def Box3d():
 @app.route('/ip')
 def ImportIPython():
     title = "IPython"
-    encodingStr = "System encoding = " + str(sys.stdout.encoding or 'NONE')
+    #os.environ['PYTHONIOENCODING'] = "utf-8"
+    #reload(sys)
+    #import codecs
+    #sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+    encodingStr = "sys.stdout.encoding = " + str(sys.stdout.encoding or 'NONE')
+    encodingStr += "\n"
+    encodingStr += "sys.stdin.encoding = " + str(sys.stdin.encoding or 'NONE')
+    encodingStr += "\n"
+    encodingStr += "sys.getdefaultencoding() = " + str(sys.getdefaultencoding() or 'NONE')
+    encodingStr += "\n"
+    encodingStr += "sys.getfilesystemencoding() = " + str(sys.getfilesystemencoding() or 'NONE')
+    encodingStr += "\n"
+    encodingStr += "PYTHONIOENCODING = " + str(os.getenv('PYTHONIOENCODING') or 'NONE')
     try:
         import IPython
         return render_template("Body.html",
