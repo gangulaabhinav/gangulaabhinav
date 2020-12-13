@@ -1,13 +1,13 @@
-﻿@{
+﻿@model gangulaabhinav.Models.HomeModel
+@{
     ViewData["Title"] = "Home Page";
     ViewData["Name"] = "Abhinav Gangula";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p><a href="https://www.linkedin.com/in/abhinav-gangula-b0872462">LinkedIn</a></p>
-    <p><a href="https://github.com/gangulaabhinav">GitHub</a></p>
-    <p><a href="https://www.facebook.com/agangula">Facebook</a></p>
-    <p><a href="https://www.zomato.com/agangula">Zomato</a></p>
-    <p><a href="https://www.imdb.com/user/ur50420048">IMDb</a></p>
+    @foreach (var link in Model.GetListOfLinks())
+    {
+        <p><a href=@link.Url>@link.Name</a></p>
+    }
 </div>

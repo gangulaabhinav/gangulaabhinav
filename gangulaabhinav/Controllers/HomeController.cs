@@ -20,7 +20,8 @@ namespace gangulaabhinav.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var model = new gangulaabhinav.Models.HomeModel();
+            return View(model);
         }
 
         public IActionResult Privacy()
