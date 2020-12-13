@@ -24,6 +24,11 @@ namespace gangulaabhinav.Controllers
             return View(model);
         }
 
+        public IActionResult Pendulum()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
